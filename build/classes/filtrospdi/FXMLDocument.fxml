@@ -29,6 +29,14 @@
                               <MenuItem mnemonicParsing="false" onAction="#showGrayBlue" text="Grises Azul" />
                           </items>
                         </Menu>
+                        <Menu mnemonicParsing="false" text="Colores">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#showRed" text="Filtro Rojo" />
+                              <MenuItem mnemonicParsing="false" onAction="#showGreen" text="Filtro Verde" />
+                              <MenuItem mnemonicParsing="false" onAction="#showBlue" text="Filtro Azul" />
+                           </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#showNegative" text="Negativo" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">

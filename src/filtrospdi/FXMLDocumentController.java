@@ -40,33 +40,66 @@ public class FXMLDocumentController implements Initializable {
             imagePreview.setImage(image);
         }
     }
-
+    
+    //  Terminar programa
     @FXML
     private void closeWindow(ActionEvent close) {
         System.exit(0);
     }
     
+    // Filtro gris
     @FXML
     private void showGrayImage(ActionEvent grayImg){
         Image result = EscalaGrises.filtroGris(imagePreview.getImage());
         imagePreview.setImage(result);
     }
     
+    // Filtro gris con Rojos
     @FXML
     private void showGrayRed(ActionEvent grayRed){
         Image result = EscalaGrises.filtroGrisRojo(imagePreview.getImage());
         imagePreview.setImage(result);
     }
     
+    //Filtro gris con Verdes
     @FXML
     private void showGrayGreen(ActionEvent grayGreen){
         Image result = EscalaGrises.filtroGrisVerde(imagePreview.getImage());
         imagePreview.setImage(result);
     }
     
+    // Filtro gris con Azules
     @FXML
     private void showGrayBlue(ActionEvent grayBlue){
         Image result = EscalaGrises.filtroGrisAzul(imagePreview.getImage());
+        imagePreview.setImage(result);
+    }
+    
+    // Filtro con Rojo
+    @FXML
+    private void showRed(ActionEvent red){
+        Image result = FiltrosColor.filtroRojo(imagePreview.getImage());
+        imagePreview.setImage(result);
+    }
+    
+    // Filtro con Verde
+    @FXML
+    private void showGreen(ActionEvent green){
+        Image result = FiltrosColor.filtroVerde(imagePreview.getImage());
+        imagePreview.setImage(result);
+    }
+    
+    // Filtro con Azul
+    @FXML
+    private void showBlue(ActionEvent blue){
+        Image result = FiltrosColor.filtroAzul(imagePreview.getImage());
+        imagePreview.setImage(result);
+    }
+    
+    // Filtro Negativo
+    @FXML
+    private void showNegative(ActionEvent negative){
+        Image result = FiltroNegativo.filtroNegativo(imagePreview.getImage());
         imagePreview.setImage(result);
     }
 
