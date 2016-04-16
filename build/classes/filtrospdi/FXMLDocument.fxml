@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="filtrospdi.FXMLDocumentController">
+   <children>
+      <BorderPane prefHeight="452.0" prefWidth="652.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openImage" text="Abrir" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Salir" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Grises">
+                          <items>
+                          <MenuItem mnemonicParsing="false" onAction="#showGrayImage" text="Promedio de Grises" />
+                            <MenuItem mnemonicParsing="false" onAction="#showGrayRed" text="Grises Rojo" />
+                              <MenuItem mnemonicParsing="false" onAction="#showGrayGreen" text="Grises Verde" />
+                              <MenuItem mnemonicParsing="false" onAction="#showGrayBlue" text="Grises Azul" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <ImageView fx:id="imagePreview" fitHeight="418.0" fitWidth="328.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
