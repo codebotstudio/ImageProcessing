@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="filtrospdi.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="filtrospdi.FXMLDocumentController">
    <children>
       <BorderPane prefHeight="452.0" prefWidth="652.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -15,11 +16,11 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Archivo">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#openImage" text="Abrir" />
+                    <MenuItem mnemonicParsing="false" onAction="#openImage" text="Abrir imagen" />
                         <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Salir" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
+                <Menu mnemonicParsing="false" text="Aplicar Filtro">
                   <items>
                         <Menu mnemonicParsing="false" text="Grises">
                           <items>
@@ -34,21 +35,64 @@
                               <MenuItem mnemonicParsing="false" onAction="#showRed" text="Filtro Rojo" />
                               <MenuItem mnemonicParsing="false" onAction="#showGreen" text="Filtro Verde" />
                               <MenuItem mnemonicParsing="false" onAction="#showBlue" text="Filtro Azul" />
+                              <MenuItem mnemonicParsing="false" onAction="#showRGBCombination" text="Combinación RGB" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Convolucion">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#showBlur" text="Blur" />
+                              <MenuItem mnemonicParsing="false" onAction="#showMotionBlur" text="Motion Blur" />
+                              <MenuItem mnemonicParsing="false" onAction="#showFindEdges" text="Find Edges" />
+                              <MenuItem mnemonicParsing="false" onAction="#showSharpen" text="Sharpen" />
+                              <MenuItem mnemonicParsing="false" onAction="#showEmboss" text="Emboss" />
+                              <MenuItem mnemonicParsing="false" onAction="#showMean" text="Mean Filter" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Brillo">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#increaseBrightness" text="Aumenta brillo" />
+                              <MenuItem mnemonicParsing="false" onAction="#decreaseBrightness" text="Disminuye brillo" />
                            </items>
                         </Menu>
                         <MenuItem mnemonicParsing="false" onAction="#showNegative" text="Negativo" />
+                        <MenuItem mnemonicParsing="false" onAction="#showHighContrast" text="Alto Contraste" />
+                        <MenuItem mnemonicParsing="false" onAction="#showBlacklight" text="Luz negra" />
+                        <MenuItem mnemonicParsing="false" onAction="#showAtnt" text="Filtro ATnT" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
+                <Menu mnemonicParsing="false" text="Ayuda">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
+                    <MenuItem mnemonicParsing="false" text="Acerca de" />
                   </items>
                 </Menu>
               </menus>
             </MenuBar>
          </top>
          <center>
-            <ImageView fx:id="imagePreview" fitHeight="418.0" fitWidth="328.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+            <SplitPane dividerPositions="0.5" prefHeight="423.0" prefWidth="34.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="originalImage" fitHeight="470.0" fitWidth="350.0" layoutX="24.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="19.0" />
+                        <Label alignment="CENTER" layoutX="129.0" layoutY="501.0" prefHeight="28.0" prefWidth="141.0" text="Imagen Original" textAlignment="CENTER">
+                           <cursor>
+                              <Cursor fx:constant="NONE" />
+                           </cursor>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="imagePreview" fitHeight="470.0" fitWidth="350.0" layoutX="19.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button layoutX="82.0" layoutY="503.0" mnemonicParsing="false" onAction="#clearImage" text="Limpiar Imagen" textAlignment="CENTER" />
+                        <Button layoutX="198.0" layoutY="503.0" mnemonicParsing="false" onAction="#saveImageFiltered" text="Guardar Imagen" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
          </center>
       </BorderPane>
    </children>
