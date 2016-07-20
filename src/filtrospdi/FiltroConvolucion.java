@@ -1,7 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Universidad Nacional Autónoma de México Facultad de Ciencias
+ * Licenciatura en Ciencias de la Computación 
+ * PROCESO DIGITAL DE IMÁGENES 2016-2 
+ * Profesor: Manuel Cristóbal López Michelone 
+ * Ayudante: Yessica Martínez Reyes
+ *
+ * López Monroy Luis Daniel
+ * No. Cta.: 311313750
  */
 package filtrospdi;
 
@@ -87,26 +92,6 @@ public class FiltroConvolucion {
         return generarConvulsion(img, matrizPatron, (1.0/9.0), 0);
     }
     
-    /*
-    public Image generarConvulsion(Image img, double[][] matrizPatron, double multiplicador, double desplazamiento){
-        Image stuntImg = img;
-        double w = stuntImg.getWidth();
-        double h = stuntImg.getHeight();
-        
-        if(w < matrizPatron.length || h < matrizPatron.length){
-            return img;
-        }
-        /*
-        for (int i = 0; i < n - matrizPatron.length; i++) {
-            for (int j = 0; j < m - matrizPatron.length; j++) {
-                double red = 0;
-                double green = 0;
-                double blue = 0;
-                
-        
-        return img;
-    } */
-    
     private static Image generarConvulsion(Image imagenOriginal, double[][] matriz,double factor,double bias) {
         BufferedImage imagen = SwingFXUtils.fromFXImage(imagenOriginal, null);
         BufferedImage nuevoLienzo = enmarca(imagen, matriz.length / 2, matriz.length / 2);
@@ -144,14 +129,7 @@ public class FiltroConvolucion {
         int h = nueva.getHeight();
         return SwingFXUtils.toFXImage(nueva.getSubimage(matriz.length/2, matriz.length / 2, w - 2 * (matriz.length/2), h - 2 * (matriz.length / 2)),null);
     }
-    
-    /**
-     * Metodo que toma una imagen y crea una nueva para escribir sobre esta.
-     * @param imagen - La imagen original.
-     * @param alto - El alto de la imagen.
-     * @param ancho - El ancho de la imagen.
-     * @return Una imagen para escribir con los pixeles de la anterior.
-     */
+
     private static BufferedImage enmarca(BufferedImage imagen, int alto, int ancho) {
         int w = imagen.getWidth();
         int h = imagen.getHeight();

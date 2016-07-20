@@ -1,10 +1,16 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Universidad Nacional Autónoma de México Facultad de Ciencias
+ * Licenciatura en Ciencias de la Computación 
+ * PROCESO DIGITAL DE IMÁGENES 2016-2 
+ * Profesor: Manuel Cristóbal López Michelone 
+ * Ayudante: Yessica Martínez Reyes
+ *
+ * López Monroy Luis Daniel
+ * No. Cta.: 311313750
  */
 package filtrospdi;
 
+import java.util.Random;
 import javafx.scene.image.Image;
 import javafx.scene.image.PixelReader;
 import javafx.scene.image.PixelWriter;
@@ -71,23 +77,33 @@ public class FiltrosColor {
     }
     
     public static Image filtroCombinado(Image img){
+        Random random = new Random();
         WritableImage resultImg = new WritableImage((int)img.getWidth(),(int)img.getHeight());
         PixelReader pixelr = img.getPixelReader();
         PixelWriter pixelw = resultImg.getPixelWriter();
         
         for (int i = 0; i < img.getHeight(); i++) {
             for (int j = 0; j < img.getWidth(); j++) {
+                int r = random.nextInt(3);
                 Color color = pixelr.getColor(j, i);
-                double blue;
-                double green;
-                double red;
-                blue = color.getBlue();
-                green = color.getGreen();
-                red = color.getRed();
-                blue *= 255;
-                green *= 255;
-                red *= 255;
-                pixelw.setColor(j, i, Color.rgb((int)green, (int)blue, (int)red));
+                if(r == 0){
+                    double red;
+                    red = color.getRed();
+                    red *= 255;
+                    pixelw.setColor(j, i, Color.rgb((int)red, 0, 0));
+                }
+                if(r == 1){
+                    double green;
+                    green = color.getGreen();
+                    green *= 255;
+                    pixelw.setColor(j, i, Color.rgb(0, (int)green, 0));
+                }
+                if(r == 2){
+                    double blue;
+                    blue = color.getBlue();
+                    blue *= 255;
+                    pixelw.setColor(j, i, Color.rgb(0, 0, (int)blue));
+                }
             }
         }
         

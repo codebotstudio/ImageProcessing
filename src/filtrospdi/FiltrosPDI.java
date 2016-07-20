@@ -1,7 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Universidad Nacional Autónoma de México Facultad de Ciencias
+ * Licenciatura en Ciencias de la Computación 
+ * PROCESO DIGITAL DE IMÁGENES 2016-2 
+ * Profesor: Manuel Cristóbal López Michelone 
+ * Ayudante: Yessica Martínez Reyes
+ *
+ * López Monroy Luis Daniel
+ * No. Cta.: 311313750
  */
 package filtrospdi;
 
@@ -27,9 +32,6 @@ public class FiltrosPDI extends Application {
         stage.show();
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }

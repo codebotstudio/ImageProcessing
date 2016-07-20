@@ -1,7 +1,12 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Universidad Nacional Autónoma de México Facultad de Ciencias
+ * Licenciatura en Ciencias de la Computación 
+ * PROCESO DIGITAL DE IMÁGENES 2016-2 
+ * Profesor: Manuel Cristóbal López Michelone 
+ * Ayudante: Yessica Martínez Reyes
+ *
+ * López Monroy Luis Daniel
+ * No. Cta.: 311313750
  */
 package filtrospdi;
 
@@ -16,22 +21,12 @@ import javafx.embed.swing.SwingFXUtils;
  * @author danielmonroy
  */
 public class ATnT {
-        /**
-     * Altura de cada linea ATT.
-     */
-    //static final int N = 12;
 
-    /**
-     
-     * @param src Imagen original
-     * @return Imagen filtrada
-     */
     static Image filtra(Image src) {
         double f = src.getHeight();
         int N = (int) f/50;
         Image pre = FiltroAltoContraste.altoContraste(src);
         BufferedImage ac = SwingFXUtils.fromFXImage(pre,null);
-        
         
         int w = ac.getWidth();
         int h = ac.getHeight();
@@ -65,11 +60,7 @@ public class ATnT {
         return SwingFXUtils.toFXImage(nueva, null);
     }
 
-    /**
-     * Dibuja lineas horizontales blancas.
-     *
-     * @param src Imagen original
-     */
+  
     private static void lineas(BufferedImage src) {
         double f = src.getHeight();
         int N = (int) f/50;
@@ -83,11 +74,6 @@ public class ATnT {
         }
     }
 
-    /**
-     * @param tam Tamano del arreglo
-     * @param puntos Numero de puntos que deben ser centrados
-     * @return Arreglo con los puntos centrados
-     */
     private static boolean[] centra(int tam, int puntos) {
         boolean[] acomodados = new boolean[tam];
         int n = puntos / 2;

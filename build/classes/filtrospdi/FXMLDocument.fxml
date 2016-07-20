@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="filtrospdi.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="filtrospdi.FXMLDocumentController">
    <children>
       <BorderPane prefHeight="452.0" prefWidth="652.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -20,51 +20,78 @@
                         <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Salir" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Aplicar Filtro">
+                  <Menu mnemonicParsing="false" text="Colores">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showRed" text="Filtro Rojo" />
+                        <MenuItem mnemonicParsing="false" onAction="#showGreen" text="Filtro Verde" />
+                        <MenuItem mnemonicParsing="false" onAction="#showBlue" text="Filtro Azul" />
+                        <MenuItem mnemonicParsing="false" onAction="#showRGBCombination" text="Combinación RGB" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Grises">
+                    <items>
+                    <MenuItem mnemonicParsing="false" onAction="#showGrayImage" text="Promedio de Grises" />
+                      <MenuItem mnemonicParsing="false" onAction="#showGrayRed" text="Grises Rojo" />
+                        <MenuItem mnemonicParsing="false" onAction="#showGrayGreen" text="Grises Verde" />
+                        <MenuItem mnemonicParsing="false" onAction="#showGrayBlue" text="Grises Azul" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Brillo">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#increaseBrightness" text="Aumenta brillo" />
+                        <MenuItem mnemonicParsing="false" onAction="#decreaseBrightness" text="Disminuye brillo" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Mosaico">
                   <items>
-                        <Menu mnemonicParsing="false" text="Grises">
-                          <items>
-                          <MenuItem mnemonicParsing="false" onAction="#showGrayImage" text="Promedio de Grises" />
-                            <MenuItem mnemonicParsing="false" onAction="#showGrayRed" text="Grises Rojo" />
-                              <MenuItem mnemonicParsing="false" onAction="#showGrayGreen" text="Grises Verde" />
-                              <MenuItem mnemonicParsing="false" onAction="#showGrayBlue" text="Grises Azul" />
-                          </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Colores">
-                           <items>
-                              <MenuItem mnemonicParsing="false" onAction="#showRed" text="Filtro Rojo" />
-                              <MenuItem mnemonicParsing="false" onAction="#showGreen" text="Filtro Verde" />
-                              <MenuItem mnemonicParsing="false" onAction="#showBlue" text="Filtro Azul" />
-                              <MenuItem mnemonicParsing="false" onAction="#showRGBCombination" text="Combinación RGB" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Convolucion">
-                           <items>
-                              <MenuItem mnemonicParsing="false" onAction="#showBlur" text="Blur" />
-                              <MenuItem mnemonicParsing="false" onAction="#showMotionBlur" text="Motion Blur" />
-                              <MenuItem mnemonicParsing="false" onAction="#showFindEdges" text="Find Edges" />
-                              <MenuItem mnemonicParsing="false" onAction="#showSharpen" text="Sharpen" />
-                              <MenuItem mnemonicParsing="false" onAction="#showEmboss" text="Emboss" />
-                              <MenuItem mnemonicParsing="false" onAction="#showMean" text="Mean Filter" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Brillo">
-                           <items>
-                              <MenuItem mnemonicParsing="false" onAction="#increaseBrightness" text="Aumenta brillo" />
-                              <MenuItem mnemonicParsing="false" onAction="#decreaseBrightness" text="Disminuye brillo" />
-                           </items>
-                        </Menu>
+                    <MenuItem mnemonicParsing="false" onAction="#makeMosaic" text="Filtro mosaico" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Artísticos">
+                  <items>
                         <MenuItem mnemonicParsing="false" onAction="#showNegative" text="Negativo" />
                         <MenuItem mnemonicParsing="false" onAction="#showHighContrast" text="Alto Contraste" />
                         <MenuItem mnemonicParsing="false" onAction="#showBlacklight" text="Luz negra" />
                         <MenuItem mnemonicParsing="false" onAction="#showAtnt" text="Filtro ATnT" />
+                        <MenuItem mnemonicParsing="false" onAction="#showOleo" text="Filtro Óleo" />
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Ayuda">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Acerca de" />
-                  </items>
-                </Menu>
+                  <Menu mnemonicParsing="false" text="Convolucion">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#showBlur" text="Blur" />
+                        <MenuItem mnemonicParsing="false" onAction="#showMotionBlur" text="Motion Blur" />
+                        <MenuItem mnemonicParsing="false" onAction="#showFindEdges" text="Find Edges" />
+                        <MenuItem mnemonicParsing="false" onAction="#showSharpen" text="Sharpen" />
+                        <MenuItem mnemonicParsing="false" onAction="#showEmboss" text="Emboss" />
+                        <MenuItem mnemonicParsing="false" onAction="#showMean" text="Mean Filter" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Blending">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#blending" text="Combinar imágenes" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Rotar">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#rota90derecha" text="90 grados a la derecha" />
+                        <MenuItem mnemonicParsing="false" onAction="#rota90izquierda" text="90 grados a la izquierda" />
+                        <MenuItem mnemonicParsing="false" onAction="#rota180" text="180 grados" />
+                        <MenuItem mnemonicParsing="false" onAction="#espejoV" text="Espejo vertical" />
+                        <MenuItem mnemonicParsing="false" onAction="#espejoH" text="Espejo horizontal" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Comprimir">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#compress" text="Comprimir esta imagen" />
+                        <MenuItem mnemonicParsing="false" onAction="#decompress" text="Buscar archivo a descomprimir" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Fotos con texto">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#makeImageOcolor" text="Colores" />
+                        <MenuItem mnemonicParsing="false" onAction="#makeImageObNw" text="Tonos de gris" />
+                     </items>
+                  </Menu>
               </menus>
             </MenuBar>
          </top>
