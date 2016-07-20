@@ -2,12 +2,16 @@
 Repositorio del curso de Proceso digital de imágenes.
 
 Universidad Nacional Autónoma de México Facultad de Ciencias
+
 Licenciatura en Ciencias de la Computación 
+
 PROCESO DIGITAL DE IMÁGENES 2016-2 
-Profesor: Manuel Cristóbal López Michelone 
-Ayudante: Yessica Martínez Reyes
+
+* Profesor: Manuel Cristóbal López Michelone 
+* Ayudante: Yessica Martínez Reyes
 
 López Monroy Luis Daniel
+
 No. Cta.: 311313750
  
  NOTAS SOBRE EL PROYECTO:
